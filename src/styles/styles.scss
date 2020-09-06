@@ -1,5 +1,30 @@
 @import '../../node_modules/vue-sidebar-menu/src/scss/vue-sidebar-menu.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/bootstrap-vue/src/index.scss';
 
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 18px;
+    background-color: #f2f4f7;
+    color: #262626;
+}
+.main {
+    position: fixed;
+    left: 56px;
+    right: 0px;
+    width: 100%;
+}
+.sidebar-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 900;
+}
+  
 .vsm--toggle-btn, .vsm--link {
     outline: none;
 }

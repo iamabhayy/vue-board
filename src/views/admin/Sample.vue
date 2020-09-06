@@ -1,71 +1,60 @@
 <template>
-  <div
-    id="demo"
-    :class="[{'collapsed' : collapsed}, {'onmobile' : isOnMobile}]"
-  >
-    <div class="demo">
-      <div class="container">
-        <h1>
-          vue-sidebar-menu
-          <a
-            style="color: #000;text-transform: uppercase;font-size: 14px;font-weight: 400;"
-            href="https://github.com/yaminncco/vue-sidebar-menu"
-          >
-            Github
-          </a>
-        </h1>
-        <p>A vue.js sidebar menu component</p>
-        <div>
-          Select theme:
-          <select v-model="selectedTheme">
-            <option
-              v-for="(theme, index) in themes"
-              :key="index"
-              :value="theme.input"
-            >
-              {{ theme.name }}
-            </option>
-          </select>
-        </div>
-        <hr style="margin: 50px 0px;border: 1px solid #e3e3e3;">
-        <router-view />
-      </div>
+  <div>
+    <h1>
+      vue-sidebar-menu
+      <a
+        style="color: #000;text-transform: uppercase;font-size: 14px;font-weight: 400;"
+        href="https://github.com/yaminncco/vue-sidebar-menu"
+      >Github</a>
+    </h1>
+    <p>A vue.js sidebar menu component</p>
+    <div>
+      Select theme:
+      <select>
+        <option></option>
+      </select>
     </div>
+    <hr style="margin: 50px 0px;border: 1px solid #e3e3e3;" />
+    <div>
+      <b-button>Button</b-button>
+      <b-button variant="danger">Button</b-button>
+      <b-button variant="success">Button</b-button>
+      <b-button variant="outline-primary">Button</b-button>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App',
-  data () {
-    return {
-      
-    }
+  name: "App",
+  data() {
+    return {};
   },
-  mounted () {
-    this.onResize()
-    window.addEventListener('resize', this.onResize)
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
   },
   methods: {
-    onToggleCollapse (collapsed) {
-      console.log(collapsed)
-      this.collapsed = collapsed
+    onToggleCollapse(collapsed) {
+      console.log(collapsed);
+      this.collapsed = collapsed;
     },
-    onItemClick (event, item, node) {
-      console.log('onItemClick')
-      console.log(event)
-      console.log(item)
-      console.log(node)
+    onItemClick(event, item, node) {
+      console.log("onItemClick");
+      console.log(event);
+      console.log(item);
+      console.log(node);
     },
-    onResize () {
+    onResize() {
       if (window.innerWidth <= 767) {
-        this.isOnMobile = true
-        this.collapsed = true
+        this.isOnMobile = true;
+        this.collapsed = true;
       } else {
-        this.isOnMobile = false
-        this.collapsed = false
+        this.isOnMobile = false;
+        this.collapsed = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
