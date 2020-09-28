@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div id="demo" :class="[{'collapsed' : collapsed}, {'onmobile' : isOnMobile}]">
     <div class="main">
       <router-view />
     </div>
     <sidebar-menu
       :menu="menu"
-      :collapsed="true"
+      :collapsed="collapsed"
       :theme="selectedTheme"
       :show-one-child="true"
       @toggle-collapse="onToggleCollapse"
@@ -160,5 +160,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
+
 </style>

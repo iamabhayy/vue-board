@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '../views/Home';
+import Login from '../views/Login';
 import Dashboard from '../views/admin/Dashboard';
 
 import DashboardPage from '../views/admin/dashboard/DashboardPage';
@@ -23,6 +24,11 @@ export default new VueRouter({
             path: '/',
             name: 'Home',
             component: Home,
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login,
         },
         {
             path: '/admin',

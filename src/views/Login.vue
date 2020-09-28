@@ -2,7 +2,7 @@
   <div class="container p-5">
     <b-card header-tag="header">
       <template v-slot:header>
-        <b class="mb-0">This is a header slot</b>
+        <b class="mb-0">Welcome to login page.</b>
         <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </template>
       <div class="d-flex bd-highlight">
@@ -41,7 +41,7 @@
                 <b-form-checkbox value="me">Remember login</b-form-checkbox>
               </b-form-checkbox-group>
             </b-form-group>
-            <b-button href="#" variant="success">Login</b-button>
+            <b-button href="/admin" variant="success">Login</b-button>
           </b-card>
         </div>
         <div class="p-2 ml-2 flex-fill bd-highlight">

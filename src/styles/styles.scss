@@ -2,18 +2,29 @@
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '../../node_modules/bootstrap-vue/src/index.scss';
 
+
+// MENU CSS & STYLE
+
 body {
     font-family: "Source Sans Pro", sans-serif;
     font-size: 18px;
     background-color: #f2f4f7;
     color: #262626;
 }
-.main {
-    position: fixed;
-    left: 56px;
-    right: 0px;
-    width: 100%;
+
+#demo {
+  padding-left: 350px;
+  transition: 0.3s ease;
 }
+
+#demo.collapsed {
+  padding-left: 50px;
+}
+
+#demo.onmobile {
+  padding-left: 50px;
+}
+
 .sidebar-overlay {
     position: fixed;
     width: 100%;
@@ -28,3 +39,30 @@ body {
 .vsm--toggle-btn, .vsm--link {
     outline: none;
 }
+
+.v-sidebar-menu .vsm--toggle-btn {
+  outline: none;
+}
+
+.main {
+  padding: 50px;
+}
+
+// BOOTSTRAP CUSTOMIZATION
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input.form-control, input.form-control:focus, .input-group-lg > .form-control, .alert {
+  box-shadow: none;
+  border-radius: 0px;
+}
+
+label{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+  
