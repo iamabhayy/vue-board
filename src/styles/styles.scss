@@ -6,8 +6,6 @@
 // MENU CSS & STYLE
 
 body {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 18px;
     background-color: #f2f4f7;
     color: #262626;
 }
@@ -44,20 +42,38 @@ body {
   outline: none;
 }
 
-.main {
-  padding: 50px;
-}
+// .main {
+//   padding: 50px;
+// }
 
 // BOOTSTRAP CUSTOMIZATION
+
+.responsive_container {
+  max-width: 1552px;
+  padding: 0 56px;
+  min-height: 720px;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 320px;
+}
 
 .btn:focus, .btn:active {
   outline: none !important;
   box-shadow: none !important;
 }
 
-input.form-control, input.form-control:focus, .input-group-lg > .form-control, .alert {
-  box-shadow: none;
+.dropdown-toggle{
   border-radius: 0px;
+  border: 1px solid #686f7a;
+}
+.dropdown-menu{
+  background: white;
+  box-shadow: 0 4px 16px rgba(20,23,28,.25);
+}
+
+input.form-control, input.form-control:focus, .input-group-lg > .form-control, .btn, .alert {
+  box-shadow: none;
+  border-radius: 2px;
 }
 
 label{

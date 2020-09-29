@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 my-3 border">
+    <div class="container">
         <h1>Hello From Dashboard Page</h1>
     </div>
 </template>

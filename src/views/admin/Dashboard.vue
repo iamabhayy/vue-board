@@ -1,8 +1,6 @@
 <template>
   <div id="demo" :class="[{'collapsed' : collapsed}, {'onmobile' : isOnMobile}]">
-    <div class="main">
-      <router-view />
-    </div>
+    <router-view />
     <sidebar-menu
       :menu="menu"
       :collapsed="collapsed"
@@ -152,7 +150,7 @@ export default {
         this.collapsed = true;
       } else {
         this.isOnMobile = false;
-        this.collapsed = false;
+        this.collapsed = true;
       }
     },
   },
