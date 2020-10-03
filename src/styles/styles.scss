@@ -48,6 +48,12 @@ body {
 
 // BOOTSTRAP CUSTOMIZATION
 
+a{
+  text-decoration: none;
+}
+.progress {
+  border-radius: 0px;
+}
 .responsive_container {
   max-width: 1552px;
   padding: 0 56px;

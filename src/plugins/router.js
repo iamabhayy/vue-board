@@ -7,6 +7,8 @@ import Dashboard from '../views/admin/Dashboard';
 
 import DashboardPage from '../views/admin/dashboard/DashboardPage';
 import CoursePage from '../views/admin/course/CoursePage';
+import CreateCourse from '../views/admin/course/pages/Create';
+
 import QuizPage from '../views/admin/quiz/QuizPage';
 import StudentPage from '../views/admin/student/StudentPage';
 import PaymentPage from '../views/admin/payment/PaymentPage';
@@ -31,6 +33,11 @@ export default new VueRouter({
             component: Login,
         },
         {
+            path: '/create',
+            name: 'course-create',
+            component: CreateCourse
+        },
+        {
             path: '/admin',
             name: 'Admin',
             component: Dashboard,
@@ -43,7 +50,7 @@ export default new VueRouter({
                 {
                     path: 'courses',
                     name: 'Course',
-                    component: CoursePage
+                    component: CoursePage,
                 },
                 {
                     path: 'quizes',
