@@ -33,7 +33,7 @@ export default new VueRouter({
             component: Login,
         },
         {
-            path: '/create',
+            path: '/create/:step',
             name: 'course-create',
             component: CreateCourse
         },

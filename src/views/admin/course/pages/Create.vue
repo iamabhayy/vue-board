@@ -9,13 +9,13 @@
             type="image/svg+xml"
           ></object>
         </div>
-        <p class="flex-grow-1 m-3">Step 1 OF 4</p>
+        <p class="flex-grow-1 m-3">Step {{ $route.params.step }} OF 4</p>
         <b-button sm class="m-2 mr-4" variant="light" @click="goToCourse">Exit</b-button>
       </div>
       <b-progress
         height="6px"
         :precision="0"
-        :value="25"
+        :value="progress"
         :max="100"
         variant="secondary"
       ></b-progress>
@@ -55,17 +55,44 @@
         </b-card>
       </div>
     </div>
+    <div class="footer border-top p-4">
+      <div class="container d-flex">
+          <b-button variant="outline-info" @click="previous">Previous</b-button>
+          <b-button variant="outline-danger" class="ml-auto" @click="next">Continue</b-button>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      progress: 25,
+    };
   },
   methods: {
     goToCourse(){
       this.$router.push({ name: 'Course' })
+    },
+    next(){
+      if(this.progress<100){
+        this.progress = this.progress+25;
+      }
+    },
+    previous(){
+      if(this.progress>25){
+        this.progress = this.progress-25;
+      }
     }
   }
 };
 </script>
+<style>
+.footer{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: white;
+}
+</style>

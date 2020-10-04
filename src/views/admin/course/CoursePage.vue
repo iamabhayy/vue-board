@@ -163,7 +163,7 @@ export default {
   },
   methods: {
     createCourse(){
-      this.$router.push({ name: 'course-create' })
+      this.$router.push({ name: 'course-create', params: { step: 1 } })
     }
   }
 };
