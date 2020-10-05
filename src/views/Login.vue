@@ -41,7 +41,7 @@
                 <b-form-checkbox value="me">Remember login</b-form-checkbox>
               </b-form-checkbox-group>
             </b-form-group>
-            <b-button href="/admin" variant="success">Login</b-button>
+            <b-button @click="$router.push({ name: 'admin'})" variant="success">Login</b-button>
           </b-card>
         </div>
         <div class="p-2 ml-2 flex-fill bd-highlight">

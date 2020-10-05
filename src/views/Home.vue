@@ -15,8 +15,8 @@
         container.
       </p>
 
-      <b-button variant="primary" href="#" class="mr-2">Do Something</b-button>
-      <b-button variant="success" href="/login">Go To Admin</b-button>
+      <b-button variant="primary" class="mr-2">Do Something</b-button>
+      <b-button variant="success" @click="$router.push({ name: 'login'})">Go To Admin</b-button>
     </b-jumbotron>
   </div>
 </template>

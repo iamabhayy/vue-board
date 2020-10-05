@@ -77,10 +77,11 @@ a{
   box-shadow: 0 4px 16px rgba(20,23,28,.25);
 }
 
-input.form-control, input.form-control:focus, .input-group-lg > .form-control, .btn, .alert {
+input.form-control, input.form-control:focus, .input-group-lg > .form-control, .btn, .alert, .custom-select:focus {
   box-shadow: none;
   border-radius: 2px;
 }
+
 
 label{
   padding-bottom: 0px;

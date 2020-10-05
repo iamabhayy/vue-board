@@ -6,7 +6,7 @@ import Login from '../views/Login';
 import Dashboard from '../views/admin/Dashboard';
 
 import DashboardPage from '../views/admin/dashboard/DashboardPage';
-import CoursePage from '../views/admin/course/CoursePage';
+import Course from '../views/admin/course/Course';
 import CreateCourse from '../views/admin/course/pages/Create';
 
 import QuizPage from '../views/admin/quiz/QuizPage';
@@ -29,17 +29,17 @@ export default new VueRouter({
         },
         {
             path: '/login',
-            name: 'Login',
+            name: 'login',
             component: Login,
         },
         {
             path: '/create/:step',
             name: 'course-create',
-            component: CreateCourse
+            component: CreateCourse,
         },
         {
             path: '/admin',
-            name: 'Admin',
+            name: 'admin',
             component: Dashboard,
             children: [
                 {
@@ -50,7 +50,7 @@ export default new VueRouter({
                 {
                     path: 'courses',
                     name: 'Course',
-                    component: CoursePage,
+                    component: Course,
                 },
                 {
                     path: 'quizes',
