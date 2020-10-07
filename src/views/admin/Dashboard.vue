@@ -1,6 +1,8 @@
 <template>
   <div id="demo" :class="[{'collapsed' : collapsed}, {'onmobile' : isOnMobile}]">
-    <router-view />
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
     <sidebar-menu
       :menu="menu"
       :collapsed="collapsed"
@@ -158,5 +160,16 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter {
+    opacity: 0;
+}
 
+.fade-enter-active {
+    transition: opacity .5s ease;
+}
+
+.fade-leave-active {
+    transition: opacity .5s ease;
+    opacity: 0;
+}
 </style>
