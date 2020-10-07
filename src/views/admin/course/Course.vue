@@ -43,10 +43,14 @@
           <b-button variant="danger" @click="createCourse">New Course</b-button>
         </div>
       </div>
+        <div v-if="$apollo.queries.courses.loading">Loading...</div>
+        <div v-if="error">{{ error }}</div>
 
-      <div class="my-5">
-        <CourseItem />
-      </div>
+        <div class="my-5">
+          <div v-for="(course, idx) in courses" :key="idx">
+            <CourseItem :data="course"/>
+          </div>
+        </div>
 
       <center class="m-5">
         <h3>
@@ -145,6 +149,7 @@
 </template>
 <script>
 import CourseItem from "./components/CourseItem";
+import { GET_ALL_COURSES } from '../../../plugins/query';
 
 export default {
   data() {
@@ -156,7 +161,17 @@ export default {
         width: 245,
         height: 245,
       },
+      error: null
     };
+  },
+  apollo: {
+    courses: {
+      query: GET_ALL_COURSES,
+      deep: true,
+      error(error) {
+        this.error = JSON.stringify(error.message);
+      }
+    }
   },
   components: {
     CourseItem,
