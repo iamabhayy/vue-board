@@ -167,7 +167,7 @@ export default {
   apollo: {
     courses: {
       query: GET_ALL_COURSES,
-      deep: true,
+      prefetch: false,
       error(error) {
         this.error = JSON.stringify(error.message);
       }
@@ -188,12 +188,6 @@ export default {
 .header {
   height: 65px;
   width: 100%;
-}
-.search-bar {
-  input {
-    height: 44px;
-  }
-  max-width: 240px;
 }
 
 .btn {

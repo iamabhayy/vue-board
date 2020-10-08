@@ -12,9 +12,8 @@ import './styles/styles.scss'
 const apolloClient = new ApolloClient({
   uri: 'http://localhost:4000/',
   headers: {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q3YzcxMTk5MWNkMzY4Y2YzZGNlNCIsImlhdCI6MTYwMjA1OTU1OSwiZXhwIjoxNjAyMDcxNTU5fQ.IP0uQt2D7kfVtoExgwKTVqDNq2h3h4BaeFFgHHcv4LU"
-  }
-})
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q3YzcxMTk5MWNkMzY4Y2YzZGNlNCIsImlhdCI6MTYwMjA1OTU1OSwiZXhwIjoxNzAyMDcxNTU5fQ.T5dvW1Hx0WZYjTkLA3nzcRJAkKUFKwrwPlNEcvqHW1A"
+}});
 
 Vue.config.productionTip = false
 
