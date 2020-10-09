@@ -154,20 +154,12 @@ import { GET_ALL_COURSES } from '../../../plugins/query';
 export default {
   data() {
     return {
-      mainProps: {
-        center: true,
-        fluidGrow: true,
-        blank: true,
-        width: 245,
-        height: 245,
-      },
       error: null
     };
   },
   apollo: {
     courses: {
       query: GET_ALL_COURSES,
-      prefetch: false,
       error(error) {
         this.error = JSON.stringify(error.message);
       }
@@ -180,6 +172,9 @@ export default {
     createCourse(){
       this.$router.push({ name: 'course-create', params: { step: 1 } })
     }
+  },
+  created() {
+    this.$apollo.queries.courses.refetch()
   }
 };
 </script>

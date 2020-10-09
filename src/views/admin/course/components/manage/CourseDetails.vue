@@ -39,29 +39,100 @@
         </b-form-group>
 
         <b-form-group id="input-group-3" label="Basic info" label-for="input-3">
-          <b-form-select
-            id="input-3"
-            v-model="form.food"
-            :options="foods"
-            required
-          ></b-form-select>
+          <div class="row">
+            <div class="col-xl-4">
+              <multiselect
+                v-model="value"
+                :options="options"
+                :searchable="false"
+                placeholder="Pick course language"
+              ></multiselect>
+            </div>
+            <div class="col-xl-4">
+              <multiselect
+                v-model="value"
+                :options="options"
+                :searchable="false"
+                placeholder="Pick course category"
+              ></multiselect>
+            </div>
+            <div class="col-xl-4">
+              <multiselect
+                v-model="value"
+                :options="options"
+                :searchable="false"
+                placeholder="Pick course sub category"
+              ></multiselect>
+            </div>
+          </div>
         </b-form-group>
 
-        <b-form-group id="input-group-4">
-          <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
-            <b-form-checkbox value="me">Check me out</b-form-checkbox>
-            <b-form-checkbox value="that">Check that out</b-form-checkbox>
-          </b-form-checkbox-group>
+        <b-form-group id="input-group-3" label="Course Tags" label-for="input-3">
+          <multiselect
+                v-model="value"
+                :options="options"
+                :multiple="true"
+                :searchable="false"
+                placeholder="Pick tags for course"
+              ></multiselect>
         </b-form-group>
 
-        <b-button type="submit" variant="primary" class="mr-2">Submit</b-button>
-        <b-button type="reset" variant="danger">Reset</b-button>
+        <b-form-group id="input-group-3" label="Course Image" label-for="input-3" class="mt-5">
+          <div class="row">
+            <div class="col-xl-6">
+              <b-img src="https://www.udemy.com/staticx/udemy/images/course/750x422/placeholder.png" fluid-grow alt="Fluid-grow image"></b-img>
+            </div>
+            <div class="col-xl-6">
+              <p>Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.</p>
+              <b-form-file
+                class="file-control"
+                v-model="file1"
+                :state="Boolean(file1)"
+                browse-text="Upload File"
+                placeholder="Choose a file or drop it here..."
+                drop-placeholder="Drop file here..."
+              ></b-form-file>
+            </div>
+          </div>
+        </b-form-group>
+
+        <b-form-group id="input-group-3" label="Promotional video" label-for="input-3">
+          <div class="row">
+            <div class="col-xl-6">
+              <b-img src="https://www.udemy.com/staticx/udemy/images/course/750x422/placeholder.png" fluid-grow alt="Fluid-grow image"></b-img>
+            </div>
+            <div class="col-xl-6">
+              <p>Students who watch a well-made promo video are 5X more likely to enroll in your course. We've seen that statistic go up to 10X for exceptionally awesome videos. Learn how to make yours awesome!</p>
+              <b-form-file
+                class="file-control"
+                v-model="file1"
+                :state="Boolean(file1)"
+                browse-text="Upload File"
+                placeholder="Choose a file or drop it here..."
+                drop-placeholder="Drop file here..."
+              ></b-form-file>
+            </div>
+          </div>
+        </b-form-group>
+
+        <b-form-group id="input-group-3" label="Course Instructor" label-for="input-3">
+          <multiselect
+                v-model="value"
+                :options="options"
+                :multiple="true"
+                :searchable="false"
+                placeholder="Select course instructure"
+              ></multiselect>
+        </b-form-group>
+
       </b-form>
     </div>
   </div>
 </template>
 
 <script>
+import Multiselect from "vue-multiselect";
+
 export default {
   data() {
     return {
@@ -78,12 +149,20 @@ export default {
         "Tomatoes",
         "Corn",
       ],
+      value: "",
+      options: ["English", "Hindi", "Hindi + English"],
       show: true,
     };
+  },
+  components: {
+    Multiselect,
+  },
+  methods: {
+    onSubmit() {},
+    onReset() {},
   },
 };
 </script>
 
-<style scoped>
-
+<style>
 </style>

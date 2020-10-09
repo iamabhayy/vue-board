@@ -16,6 +16,7 @@
     "graphql-tag": "^2.11.0",
     "vue": "^2.6.12",
     "vue-apollo": "^3.0.4",
+    "vue-multiselect": "^2.1.6",
     "vue-router": "^3.4.3",
     "vue-sidebar-menu": "^4.7.1",
     "vuex": "^3.5.1"

@@ -1,7 +1,7 @@
 @import '../../node_modules/vue-sidebar-menu/src/scss/vue-sidebar-menu.scss';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import '../../node_modules/bootstrap-vue/src/index.scss';
-
+@import '../../node_modules/vue-multiselect/dist/vue-multiselect.min.css';
 
 // MENU CSS & STYLE
 
@@ -117,4 +117,39 @@ input.form-control, input.form-control:focus, .input-group-lg > .form-control, .
   line-height: 24px;
   text-align: center;
 }
-  
+
+//Vue Multi select CSS
+
+.multiselect__select {
+  top: 4px;
+}
+.multiselect__placeholder {
+  color: #6c757d;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+}
+.multiselect__content-wrapper {
+  border: 1px solid #8a92a3;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.multiselect__tags {
+  min-height: 44px;
+  padding: 10px 40px 0 8px;
+  border-radius: 2px;
+  border: 1px solid #8a92a3;
+  .multiselect__tag {
+    padding: 6px 26px 6px 10px;
+    border-radius: 2px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    .multiselect__tag-icon {
+      border-radius: 2px;
+    }
+  }
+}
+
+
+

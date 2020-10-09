@@ -68,6 +68,9 @@ export default {
   components: {
     CourseDetails,
     Introduction
+  },
+  methods: {
+    goToCourse() {},
   }
 };
 </script>
