@@ -27,38 +27,25 @@
       <div class="d-flex">
         <div class="side-step mt-5 pr-4">
           <b-list-group>
-            <b-list-group-item href="#some-link"
-              >Introduction</b-list-group-item
-            >
-            <b-list-group-item href="#" active
-              >Course Details</b-list-group-item
-            >
-            <b-list-group-item href="#"
-              >Curriculums</b-list-group-item
-            >
-            <b-list-group-item href="#foobar"
-              >Pricing</b-list-group-item
-            >
-            <b-list-group-item href="#foobar"
-              >Promotions</b-list-group-item
-            >
-            <b-list-group-item href="#foobar"
-              >Course messages</b-list-group-item
-            >
+            <b-list-group-item href="./introduction">Introduction</b-list-group-item>
+            <b-list-group-item href="./course-details">Course Details</b-list-group-item>
+            <b-list-group-item href="./curriculums">Curriculums</b-list-group-item>
+            <b-list-group-item href="./pricing">Pricing</b-list-group-item>
+            <b-list-group-item href="./promotions">Promotions</b-list-group-item>
+            <b-list-group-item href="./messages">Course messages</b-list-group-item>
           </b-list-group>
+          
         </div>
         <div class="app-content">
-            <Introduction v-if="false"/>
-            <CourseDetails/>
+          <transition name="fade" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
-import CourseDetails from '../components/manage/CourseDetails'
-import Introduction from '../components/manage/Introduction'
 export default {
   data(){
     return{
@@ -66,8 +53,7 @@ export default {
     }
   },
   components: {
-    CourseDetails,
-    Introduction
+
   },
   methods: {
     goToCourse() {},

@@ -6,14 +6,32 @@
       </div>
     </div>
     <div class="p-5">
-      <h3>Small introductions about course creation.</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
-      <h5>How to publish courses</h5>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias excepturi ipsum dolor, saepe sequi esse labore animi unde qui ullam quos quae suscipit soluta accusantium? Soluta quibusdam odit autem iure?</p>
+      <p>
+        Write messages to your students (optional) that will be sent
+        automatically when they join or complete your course to encourage
+        students to engage with course content. If you do not wish to send a
+        welcome or congratulations message, leave the text box blank.
+      </p>
+      <b-form-group label="Welcome Message" label-for="title">
+        <div class="form-control-counter-container">
+          <b-form-textarea
+            placeholder="Enter something..."
+            rows="4"
+            max-rows="6"
+            class="form-control"
+          ></b-form-textarea>
+        </div>
+      </b-form-group>
+      <b-form-group label="Congratulations Message" label-for="title">
+        <div class="form-control-counter-container">
+          <b-form-textarea
+            placeholder="Enter something..."
+            rows="4"
+            max-rows="6"
+            class="form-control"
+          ></b-form-textarea>
+        </div>
+      </b-form-group>
     </div>
   </div>
 </template>

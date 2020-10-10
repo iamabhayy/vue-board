@@ -142,13 +142,6 @@ export default {
         food: null,
         checked: [],
       },
-      foods: [
-        { text: "Select One", value: null },
-        "Carrots",
-        "Beans",
-        "Tomatoes",
-        "Corn",
-      ],
       value: "",
       options: ["English", "Hindi", "Hindi + English"],
       show: true,

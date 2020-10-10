@@ -60,7 +60,8 @@ export default {
     createCourse(){
       // Create New Course With Course Name & Category also with type.
       // Get created course id and navigate to manage page.
-      this.$router.push({ name: 'course-manage', params: { id: '001' } })
+      var id = 'course0001';
+      this.$router.push({ path: `/manage-course/${id}` })
     },
     next(){
       if(this.step<4){
