@@ -43,7 +43,9 @@
           <b-button variant="danger" @click="createCourse">New Course</b-button>
         </div>
       </div>
-        <div v-if="$apollo.queries.courses.loading">Loading...</div>
+        <center class="center-block m-5" v-if="$apollo.queries.courses.loading">
+          <b-spinner type="grow" label="Loading..."></b-spinner>
+        </center>
         <div v-if="error">{{ error }}</div>
 
         <div class="my-5">

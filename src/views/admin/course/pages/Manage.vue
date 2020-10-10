@@ -1,20 +1,18 @@
 <template>
   <div>
     <div class="top-nav">
-      <div class="d-flex align-content-center">
-        <div class="border-right" style="margin: auto">
-          <a href="" class="text-decoration-none text-light p-3">
+      <div class="d-flex align-items-center">
+        <div class="border-right m-3" style="min-width: 160px">
+          <a href="/admin/courses" class="text-decoration-none text-light pr-3" >
             <i class="fas fa-chevron-left fa-lg mr-2"></i>
             Back to courses
           </a>
         </div>
-        <h5 class="text-light text-truncate m-3">Physics XII</h5>
-        <p class="text-light my-3">DRAFT</p>
-        <h5 class="flex-grow-1 text-light m-3">
-          6min of video content uploaded
-        </h5>
+        <h5 class="text-light text-truncate m-0">Physics XII</h5>
+        <p class="text-light small m-0 mx-3">DRAFT</p>
+        <p class="flex-grow-1 text-light m-0">6min of video content uploaded</p>
         <div>
-          <b-button sm class="m-2" variant="light" disabled @click="goToCourse"
+          <b-button sm variant="light" disabled @click="goToCourse"
             >Save</b-button
           >
           <b-button variant="link" class="text-light mr-2"
@@ -34,7 +32,6 @@
             <b-list-group-item href="./promotions">Promotions</b-list-group-item>
             <b-list-group-item href="./messages">Course messages</b-list-group-item>
           </b-list-group>
-          
         </div>
         <div class="app-content">
           <transition name="fade" mode="out-in">
