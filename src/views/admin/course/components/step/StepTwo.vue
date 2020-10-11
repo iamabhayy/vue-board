@@ -1,32 +1,35 @@
 <template>
   <div class="container">
-      <h3 class="text-center mt-5">
-        How about a working title?
-      </h3>
-      <p class="text-center m-4">It's ok if you can't think of a good title now. You can change it later.</p>
-      <div class="row mt-5 justify-content-center">
-       <b-col md="7">
-        <div class="form-control-counter-container">
-            <b-form-input
-              placeholder="e.g. Learn Photoshop CS6 from Scratch"
-              maxlength="60"
-              class="form-control"
-            />
-            <div class="form-control-counter">60</div>
-          </div>
+    <h3 class="text-center mt-5">How about a working title?</h3>
+    <p class="text-center m-4" @click="console.log(name)">
+      It's ok if you can't think of a good title now. You can change it later.
+    </p>
+    <div class="row mt-5 justify-content-center">
+      <b-col md="7">
+        <TextInputField
+          label="Course Title"
+          placeholder="e.g. Learn Photoshop CS6 from Scratch"
+          :maxLength="60"
+          v-model="name"
+        />
       </b-col>
-      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import TextInputField from "../../../../../components/form/TextInputField";
 export default {
-    data(){
-      return{}
-    }
-}
+  data() {
+    return {
+      name: '',
+    };
+  },
+  components: {
+    TextInputField,
+  },
+};
 </script>
 
 <style>
-
 </style>

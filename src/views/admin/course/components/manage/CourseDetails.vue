@@ -7,36 +7,26 @@
     </div>
     <div class="p-5">
       <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-        <b-form-group label="Course title" label-for="title">
-          <div class="form-control-counter-container">
-            <b-form-input
-              placeholder="Insert your course title."
-              maxlength="60"
-              class="form-control"
-            />
-            <div class="form-control-counter">60</div>
-          </div>
-        </b-form-group>
+        <TextInputField
+          label="Course Title"
+          placeholder="Insert your course title."
+          :maxLength="60"
+          v-model="form.title"
+        />
 
-        <b-form-group label="Course subtitle" label-for="title">
-          <div class="form-control-counter-container">
-            <b-form-input
-              placeholder="Insert your course subtitle."
-              maxlength="120"
-              class="form-control"
-            />
-            <div class="form-control-counter">120</div>
-          </div>
-        </b-form-group>
+        <TextInputField
+          label="Course subtitle"
+          placeholder="Insert your course subtitle."
+          :maxLength="120"
+          v-model="form.subtitle"
+        />
 
-        <b-form-group label="Course description" label-for="description">
-          <b-form-input
-            id="description"
-            v-model="form.name"
-            required
-            placeholder="Enter your description"
-          ></b-form-input>
-        </b-form-group>
+        <TextInputField
+          label="Course description"
+          placeholder="Enter your course description"
+          :maxLength="600"
+          v-model="form.description"
+        />
 
         <b-form-group id="input-group-3" label="Basic info" label-for="input-3">
           <div class="row">
@@ -132,14 +122,14 @@
 
 <script>
 import Multiselect from "vue-multiselect";
-
+import TextInputField from "../../../../../components/form/TextInputField";
 export default {
   data() {
     return {
       form: {
-        email: "",
-        name: "",
-        food: null,
+        title: "",
+        subtitle: "",
+        description: '',
         checked: [],
       },
       value: "",
@@ -149,6 +139,7 @@ export default {
   },
   components: {
     Multiselect,
+    TextInputField,
   },
   methods: {
     onSubmit() {},
