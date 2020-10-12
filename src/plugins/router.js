@@ -25,6 +25,7 @@ import ChattingPage from '../views/admin/chatting/ChattingPage';
 import AnounsmentPage from '../views/admin/anounsment/AnounsmentPage';
 
 import AppSettingPage from '../views/admin/settings/AppSettingPage';
+import ProfilePage from '../views/admin/settings/ProfilePage';
 import Sample from '../views/admin/Sample';
 
 Vue.use(VueRouter);
@@ -131,6 +132,11 @@ export default new VueRouter({
                     path: 'app-settings',
                     name: 'AppSettings',
                     component: AppSettingPage
+                },
+                {
+                    path: 'profile',
+                    name: 'Profile',
+                    component: ProfilePage
                 },
                 {
                     path: 'sample',

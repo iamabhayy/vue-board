@@ -46,7 +46,7 @@
         <center class="center-block m-5" v-if="$apollo.queries.courses.loading">
           <b-spinner type="grow" label="Loading..."></b-spinner>
         </center>
-        <div v-if="error">{{ error }}</div>
+        <!-- <div v-if="error">{{ error }}</div> -->
 
         <div class="my-5">
           <div v-for="(course, idx) in courses" :key="idx">
@@ -163,7 +163,14 @@ export default {
     courses: {
       query: GET_ALL_COURSES,
       error(error) {
+        console.log(error)
         this.error = JSON.stringify(error.message);
+        this.$bvToast.toast(this.error, {
+          title: 'SERVER ERROR!',
+          variant: 'danger',
+          toaster: 'b-toaster-bottom-right',
+          solid: true
+        })
       }
     }
   },
