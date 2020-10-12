@@ -108,7 +108,7 @@ export default {
           const { token, user } = data.user;
           localStorage.setItem("GQ_USER_ID", user.id)
           localStorage.setItem("GQ_AUTH_TOKEN", token) 
-          this.$router.push({ name: "Dashboard" })
+          this.$router.push('/admin')
         })
         .catch(err => {
           console.log(err)

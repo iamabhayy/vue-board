@@ -23,9 +23,10 @@ import QuizPage from '../views/admin/quiz/QuizPage';
 import StudentPage from '../views/admin/student/StudentPage';
 import PaymentPage from '../views/admin/payment/PaymentPage';
 import ChattingPage from '../views/admin/chatting/ChattingPage';
+import ReviewPage from '../views/admin/review/ReviewPage';
 import AnounsmentPage from '../views/admin/anounsment/AnounsmentPage';
 
-import AppSettingPage from '../views/admin/settings/AppSettingPage';
+import AppSettingPage from '../views/admin/app/AppSettingPage';
 import ProfilePage from '../views/admin/settings/ProfilePage';
 import Sample from '../views/admin/Sample';
 
@@ -131,6 +132,11 @@ export default new VueRouter({
                     path: 'chatting',
                     name: 'Chatting',
                     component: ChattingPage
+                },
+                {
+                    path: 'reviews',
+                    name: 'Reviews',
+                    component: ReviewPage
                 },
                 {
                     path: 'anounsment',

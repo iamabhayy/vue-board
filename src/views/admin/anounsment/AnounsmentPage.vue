@@ -1,5 +1,24 @@
 <template>
     <div>
-        <h1>Hello From Announsment Page</h1>
+        <div class="header"></div>
+        <div class="responsive_container">
+            <HeaderTitle
+                title="Anounsments"
+                subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius."
+            />
+        </div>
     </div>
 </template>
+<script>
+import HeaderTitle from "../../../components/header/HeaderTitle";
+export default {
+  data() {
+    return {
+
+    };
+  },
+  components: {
+    HeaderTitle,
+  },
+};
+</script>

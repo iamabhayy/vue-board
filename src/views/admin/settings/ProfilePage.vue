@@ -2,20 +2,16 @@
   <div>
     <div class="header"></div>
     <div class="responsive_container">
-      <div>
-        <h2>Profile & Settings</h2>
-        <p class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          eius.
-        </p>
-      </div>
+      <HeaderTitle
+        title="Profile & Settings"
+        subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius."
+      />
       <b-tabs content-class="mt-3" lazy>
         <b-tab title="Profile Details">
           <b-row>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
               <TextInputField
                 label="First Name"
-                placeholder="Enter your first name"
                 :maxLength="20"
                 :showCount="false"
                 v-model="value"
@@ -23,7 +19,6 @@
 
               <TextInputField
                 label="Last Name"
-                placeholder="Enter your last name"
                 :maxLength="20"
                 :showCount="false"
                 v-model="value"
@@ -39,7 +34,7 @@
               <b-form-group label="Biography" label-for="title">
                 <div class="form-control-counter-container">
                   <b-form-textarea
-                    placeholder="Enter something..."
+                    placeholder="Enter something about yourself..."
                     rows="4"
                     max-rows="6"
                     class="form-control"
@@ -49,18 +44,17 @@
 
               <b-form-group
                 id="input-group-3"
-                label="Basic info"
+                label="Language"
                 label-for="input-3"
               >
                 <multiselect
-                  v-model="value"
+                  v-model="language"
                   :options="options"
                   :searchable="false"
-                  placeholder="Pick course language"
                 ></multiselect>
               </b-form-group>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6">
               <TextInputField
                 label="Website"
                 placeholder="Url"
@@ -134,19 +128,20 @@
 <script>
 import Multiselect from "vue-multiselect";
 import TextInputField from "../../../components/form/TextInputField";
+import HeaderTitle from "../../../components/header/HeaderTitle";
 export default {
   data() {
     return {
       value: "",
+      language: "",
+      file1: "",
       options: ["English", "Hindi", "Hindi + English"],
     };
   },
   components: {
     Multiselect,
     TextInputField,
+    HeaderTitle,
   },
 };
 </script>
-
-<style>
-</style>

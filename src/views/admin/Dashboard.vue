@@ -66,6 +66,11 @@ export default {
           icon: "fa fa-comments",
         },
         {
+          href: "/admin/reviews",
+          title: "Reviews",
+          icon: "fa fa-star",
+        },
+        {
           href: "/admin/anounsment",
           title: "Anounsments",
           icon: "fa fa-bell",
@@ -92,7 +97,7 @@ export default {
           icon: "fa fa-cog",
           child: [
             {
-              href: "/admin/profile-settings",
+              href: "/admin/profile",
               title: "Profile",
               icon: "fa fa-file-alt",
             },

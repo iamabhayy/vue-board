@@ -3,7 +3,7 @@
         <div class="header"></div>
         <div class="responsive_container">
             <HeaderTitle
-                title="Chattings"
+                title="Ratings & Reviews"
                 subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius."
             />
         </div>
