@@ -46,6 +46,11 @@ export default {
           icon: "fab fa-quora",
         },
         {
+          href: "/admin/categories",
+          title: "Categories & Tags",
+          icon: "fas fa-th-list",
+        },
+        {
           header: true,
           title: "Reporting",
           hiddenOnCollapse: true,
@@ -82,6 +87,15 @@ export default {
           header: true,
           title: "Management",
           hiddenOnCollapse: true,
+        },
+        {
+          href: "/admin/users",
+          title: "Users",
+          icon: "fas fa-users",
+          badge: {
+            text: "new",
+            class: "vsm--badge_default",
+          },
         },
         {
           href: "/admin/app-settings",

@@ -20,11 +20,13 @@ import Messages from '../views/admin/course/components/manage/Messages';
 
 
 import QuizPage from '../views/admin/quiz/QuizPage';
+import CategoryPage from '../views/admin/category/CategoryPage';
 import StudentPage from '../views/admin/student/StudentPage';
 import PaymentPage from '../views/admin/payment/PaymentPage';
 import ChattingPage from '../views/admin/chatting/ChattingPage';
 import ReviewPage from '../views/admin/review/ReviewPage';
 import AnounsmentPage from '../views/admin/anounsment/AnounsmentPage';
+import UserPage from '../views/admin/users/UserPage';
 
 import AppSettingPage from '../views/admin/app/AppSettingPage';
 import ProfilePage from '../views/admin/settings/ProfilePage';
@@ -119,6 +121,11 @@ export default new VueRouter({
                     component: QuizPage
                 },
                 {
+                    path: 'categories',
+                    name: 'Categories',
+                    component: CategoryPage
+                },
+                {
                     path: 'students',
                     name: 'Students',
                     component: StudentPage
@@ -142,6 +149,11 @@ export default new VueRouter({
                     path: 'anounsment',
                     name: 'Anounsment',
                     component: AnounsmentPage
+                },
+                {
+                    path: 'users',
+                    name: 'Users',
+                    component: UserPage
                 },
                 {
                     path: 'app-settings',
