@@ -1,22 +1,36 @@
 <template>
-  <div>
-    <b-jumbotron>
-      <template v-slot:header>BootstrapVue</template>
-
-      <template v-slot:lead>
-        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-        featured content or information.
-      </template>
-
-      <hr class="my-4" />
-
-      <p>
-        It uses utility classes for typography and spacing to space content out within the larger
-        container.
-      </p>
-
-      <b-button variant="primary" class="mr-2">Do Something</b-button>
-      <b-button variant="success" @click="$router.push({ name: 'login'})">Go To Admin</b-button>
-    </b-jumbotron>
+  <div class="bg">
+    <Header />
+   
+      <div v-if="!user" class="container">
+        <Login />
+      </div>
+    <div v-else class="container align-self-center mx-auto text-center mt-5">
+      <h1 class="mb-3">You are Already login</h1>
+      <b-button variant="success" @click="gotoDashboard()">Go to Dashboard</b-button>
+    </div>
   </div>
 </template>
+<script>
+import Header from "./Header.vue";
+import Login from "./Login.vue";
+export default {
+  components: {
+    Header,
+    Login
+  },
+  computed: {
+    user() {
+      return localStorage.getItem('GQ_USER_ID') 
+    }
+  },
+  methods: {
+    gotoDashboard() {
+      this.$router.replace({ name: "Dashboard" });
+    }
+  }
+};
+</script>
+
+<style scoped>
+</style>

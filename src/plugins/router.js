@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 import Home from '../views/Home';
 import Login from '../views/Login';
+import Register from '../views/Register';
 import Dashboard from '../views/admin/Dashboard';
 
 import DashboardPage from '../views/admin/dashboard/DashboardPage';
@@ -41,6 +42,11 @@ export default new VueRouter({
             path: '/login',
             name: 'login',
             component: Login,
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: Register,
         },
         {
             path: '/create/:step',
@@ -92,6 +98,9 @@ export default new VueRouter({
             path: '/admin',
             name: 'admin',
             component: Dashboard,
+            meta: {
+                requiresAuth: true
+            },
             children: [
                 {
                     path: '/',

@@ -9,11 +9,14 @@ import VueApollo from 'vue-apollo'
 
 import './styles/styles.scss'
 
+const token = localStorage.getItem('GQ_AUTH_TOKEN')
 const apolloClient = new ApolloClient({
   uri: 'http://localhost:4000/',
   headers: {
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q3YzcxMTk5MWNkMzY4Y2YzZGNlNCIsImlhdCI6MTYwMjA1OTU1OSwiZXhwIjoxNzAyMDcxNTU5fQ.T5dvW1Hx0WZYjTkLA3nzcRJAkKUFKwrwPlNEcvqHW1A"
-}});
+    "token": token || ''
+  }
+})
+
 
 Vue.config.productionTip = false
 
@@ -26,8 +29,26 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient,
 })
 
+const  userId = localStorage.getItem('GQ_USER_ID')
+
+VueRouter.beforeEach((to, from, next) => {
+ 
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if (requiresAuth && !userId) {
+    next('/login');
+  } else if (requiresAuth && userId) {
+    next();
+  } else {
+    next();
+  }
+});
+
 new Vue({
   router: VueRouter,
   apolloProvider,
+  data: {
+    userId
+  },
   render: h => h(App),
 }).$mount('#app')
