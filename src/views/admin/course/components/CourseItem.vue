@@ -3,7 +3,7 @@
     <div class="col-xl-2 p-0">
       <b-img
         class="img-fluid"
-        src="https://www.udemy.com/staticx/udemy/images/course/750x422/placeholder.png"
+        :src="data.banner"
       />
     </div>
     <div class="col-xl-10 p-0">

@@ -20,6 +20,8 @@ export const GET_ALL_COURSES = gql`query courses{
     courses{
       id
       title
+      banner
+      description
       status
       createdAt
     }

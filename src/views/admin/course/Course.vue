@@ -2,13 +2,10 @@
   <div>
     <div class="header"></div>
     <div class="responsive_container">
-      <div>
-        <h2>Courses</h2>
-        <p class="subtitle">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          eius.
-        </p>
-      </div>
+      <HeaderTitle
+        title="Courses"
+        subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius."
+      />
       <div class="my-5">
         <b-alert show dismissible>
           <i class="fas fa-info-circle"></i>
@@ -152,6 +149,7 @@
 <script>
 import CourseItem from "./components/CourseItem";
 import { GET_ALL_COURSES } from '../../../plugins/query';
+import HeaderTitle from "../../../components/header/HeaderTitle";
 
 export default {
   data() {
@@ -176,6 +174,7 @@ export default {
   },
   components: {
     CourseItem,
+    HeaderTitle
   },
   methods: {
     createCourse(){
