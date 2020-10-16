@@ -18,7 +18,7 @@
       <div class="d-flex justify-content-between">
         <div class="d-flex">
           <b-input-group class="search-bar">
-            <b-form-input placeholder="Search your courses"></b-form-input>
+            <b-form-input placeholder="Search your courses" v-model="searchQuery"></b-form-input>
             <b-input-group-append>
               <b-button squared variant="info">
                 <i class="fas fa-search"></i>
@@ -46,7 +46,7 @@
         <!-- <div v-if="error">{{ error }}</div> -->
 
         <div class="my-5">
-          <div v-for="(course, idx) in courses" :key="idx">
+          <div v-for="(course, idx) in coursesData" :key="idx">
             <CourseItem :data="course"/>
           </div>
         </div>
@@ -154,6 +154,7 @@ import HeaderTitle from "../../../components/header/HeaderTitle";
 export default {
   data() {
     return {
+      searchQuery: '',
       error: null
     };
   },
@@ -179,6 +180,17 @@ export default {
   methods: {
     createCourse(){
       this.$router.push({ name: 'course-create', params: { step: 1 } })
+    }
+  },
+  computed: {
+    coursesData(){
+      if(this.searchQuery){
+      return this.courses.filter((item)=>{
+        return this.searchQuery.toLowerCase().split(' ').every(v => item.title.toLowerCase().includes(v))
+      })
+      }else{
+        return this.courses;
+      }
     }
   },
   created() {
